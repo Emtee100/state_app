@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:state_app/screens/product_detail_screen.dart';
 import 'package:state_app/screens/products_overview_screen.dart';
+import 'providers/products_provider.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(const MyApp());
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,6 +18,9 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: ProductsOverviewScreen(),
+      routes: {
+        ProductDetailScreen.routeName: ((context) => ProductDetailScreen()),
+      },
     );
   }
 }
